@@ -36,6 +36,6 @@ namespace usbserial{
     } 
 }
 
-void sendString(const char *c, int len) {
+void usbSendString(const char *c, int len) {
     usbserial::sendString(c, len);
 } 
