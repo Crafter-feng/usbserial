@@ -1,38 +1,21 @@
+namespace usbserial {
 
-/**
-* 使用此文件来定义自定义函数和图形块。
-* 想了解更详细的信息，请前往 https://makecode.microbit.org/blocks/custom
-*/
+    //% shim=usbserial::writeString
+    function writeString(text: string): void{
 
-enum MyEnum {
-    //% block="one"
-    One,
-    //% block="two"
-    Two
-}
-
-/**
- * Custom blocks
- */
-//% weight=100 color=#0fbc11 icon=""
-namespace custom {
-    /**
-     * TODO: describe your function here
-     * @param n describe parameter here, eg: 5
-     * @param s describe parameter here, eg: "Hello"
-     * @param e describe parameter here
-     */
-    //% block
-    export function foo(n: number, s: string, e: MyEnum): void {
-        // Add code here
     }
 
     /**
-     * TODO: describe your function here
-     * @param value describe value here, eg: 5
+     * Print a line of text to the serial port
+     * @param value to send over serial
      */
-    //% block
-    export function fib(value: number): number {
-        return value <= 1 ? value : fib(value -1) + fib(value - 2);
+    //% weight=90
+    //% help=serial/write-line blockGap=8
+    //% blockId=usb_serial_writeline block="usb serial|write line %text"
+    //% text.shadowOptions.toString=true
+    export function writeLine(text: string): void{
+        if (!text) text = "";
+        writeString(text);
+        writeString("\r\n");
     }
 }

@@ -10,8 +10,9 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "usbserial.ts",
-        "usbserial.cpp"
+        "usbserial.cpp",
+        "shims.d.ts",
+        "usbserial.ts"
     ],
     "testFiles": [
         "test.ts"
